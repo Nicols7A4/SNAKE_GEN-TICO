@@ -4,3 +4,6 @@ data/*
 
 checkpoints/*
 !checkpoints/.gitkeep
+
+checkpoints/*
+!checkpoints/.gitkeep

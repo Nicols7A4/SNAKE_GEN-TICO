@@ -35,7 +35,7 @@ TIEMPO_VIDA_INICIAL = 100  # Pasos máximos sin comer (evita bucles infinitos)
 
 # Velocidad
 FPS_ENTRENAMIENTO = 1000   # Modo rápido para entrenar
-FPS_VER = 30               # Modo lento para observar
+FPS_VER = 30               # Modo lento para observar, puede modificarse
 ```
 
 ---

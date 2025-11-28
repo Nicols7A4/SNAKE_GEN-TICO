@@ -23,6 +23,7 @@ class Poblacion:
         
         # Inicializar archivo de LOG (CSV)
         self.path_log = os.path.join(self.path_session, "stats.csv")
+        self.path_session = os.path.join("data", f"session_{self.timestamp}/generaciones/")
         
         # Escribir cabeceras del CSV
         with open(self.path_log, mode='w', newline='') as file:
@@ -48,6 +49,19 @@ class Poblacion:
                 s.update()
 
     def evolucionar(self):
+        ranking_temporal = sorted(self.individuos, key=lambda s: s.calcular_fitness(), reverse=True)
+        
+        mejor_1 = ranking_temporal[0]
+        mejor_2 = ranking_temporal[1]
+        
+        # Encontramos sus IDs originales (dónde estaban sentados en la clase)
+        id_1 = self.individuos.index(mejor_1)
+        id_2 = self.individuos.index(mejor_2)
+        
+        print(f"--- PODIO GEN {self.generacion} ---")
+        print(f"🥇 1er Lugar: ID {id_1} | Score: {mejor_1.score} | Fit: {mejor_1.calcular_fitness():.0f}")
+        print(f"🥈 2do Lugar: ID {id_2} | Score: {mejor_2.score} | Fit: {mejor_2.calcular_fitness():.0f}")
+        
         # 1. IDENTIFICAR AL MEJOR (Usando Fitness estrictamente)
         # Usamos calcular_fitness() para elegir al mejor, respetando tu lógica de evolución.
         mejor_ind = max(self.individuos, key=lambda s: s.calcular_fitness())
@@ -111,7 +125,7 @@ class Poblacion:
 
         # B. Guardar Checkpoint (Solo si iguala/supera récord o cada 10 gens)
         if score_mejor >= self.mejor_score_hist or self.generacion % 10 == 0:
-            nombre = f"best_gen_{self.generacion}_id_{id_mejor}_score_{score_mejor}.txt"
+            nombre = f"best_gen_{self.timestamp}_{self.generacion}_id_{id_mejor}_score_{score_mejor}.txt"
             ruta = os.path.join(self.path_checkpoints, nombre)
             mejor_serpiente.cerebro.guardar(ruta)
 
