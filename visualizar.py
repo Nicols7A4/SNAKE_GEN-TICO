@@ -13,7 +13,8 @@ def graficar_ultimos_resultados():
             return
             
         # ultima_sesion = max(lista_sesiones, key=os.path.getctime)
-        ultima_sesion = os.path.join('data', 'session_20251126_230535')
+        # ultima_sesion = os.path.join('data', 'session_20251126_230535')
+        ultima_sesion = os.path.join('data', 'session_20251202_200859')
         archivo_csv = os.path.join(ultima_sesion, 'stats.csv')
         
         print(f"Graficando datos de: {archivo_csv}")

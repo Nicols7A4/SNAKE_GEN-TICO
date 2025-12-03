@@ -7,9 +7,12 @@ from brain import Cerebro
 # --- CONFIGURACIÓN DE MODO ---
 # Si está vacío "", entrena normal.
 # Si pones un archivo "checkpoints/best_gen_50.txt", JUEGA SOLO con ese cerebro.
-# ARCHIVO_REPLAY = "" 
+ARCHIVO_REPLAY = "" 
 # ARCHIVO_REPLAY = "checkpoints/best_gen_334_id_17_score_125.txt" 
-ARCHIVO_REPLAY = "checkpoints/best_gen_350_id_30_score_101.txt" 
+# ARCHIVO_REPLAY = "checkpoints/best_gen_350_id_30_score_101.txt" 
+ARCHIVO_REPLAY = "checkpoints/best_gen_20251202_200859_430_id_25_score_136.txt" 
+ARCHIVO_REPLAY = "checkpoints/best_gen_20251202_200859_360_id_23_score_130.txt" 
+ARCHIVO_REPLAY = "checkpoints/best_gen_20251202_200859_440_id_41_score_124.txt" 
 
 def main():
     pygame.init()

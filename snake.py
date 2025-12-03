@@ -99,3 +99,11 @@ class Serpiente:
     def calcular_fitness(self):
         # Función de evaluación: maximizar comida y tiempo [cite: 233]
         return (self.score * 500) + self.pasos
+    
+# main.py
+# ga.py
+# snake.py
+# settings.py
+# brain.py
+# vizualizar.py
+# 
